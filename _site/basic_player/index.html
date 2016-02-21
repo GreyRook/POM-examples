@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PIXI Object Model example: Basics</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+        }
+    </style>
+    <script src="../lib/pixi.min.js"></script>
+    <script src="../lib/pom.min.js"></script>
+    </head>
+<body>
+<script>
+    var stage = new PIXI.Container();
+
+    var renderer = PIXI.autoDetectRenderer(800, 600,{backgroundColor : 0xffffff});
+    document.body.appendChild(renderer.view);
+
+    var manager = new POM.Manager({
+        // the root object is a always of type "container"
+        'values': {
+            'position': {
+                'x': 100,
+                'y': 100
+            },
+            'scale': {
+                'x': 2.0,
+                'y': 2.0
+            }
+        },
+        'children': [
+            {
+                'type': 'sprite',
+                'values': {
+                    'source': '../assets/bunny.png',
+                    //scale the image up 4 times 2 times added to the 2-scale of the parent container
+                    'scale': {'x': 2},
+                    'pivot': {'x': 20},
+                    // rotate 90°
+                    'rotation': Math.PI/2
+                }
+            }
+        ]
+    });
+
+    stage.addChild(manager);
+
+    animate();
+
+    function animate() {
+        // render the stage
+        renderer.render(stage);
+        requestAnimationFrame(animate);
+    }
+</script>
+</body>
+</html>

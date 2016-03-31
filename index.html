@@ -8,8 +8,117 @@
         <meta name="description" content="POM usage examples." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        <title>POM Examples</title>
+        <link rel="stylesheet" media="screen" type="text/css" href="_site/css/codemirror/codemirror.css"/>
+        <link rel="stylesheet" media="screen" type="text/css" href="_site/css/codemirror/theme/ambiance.css">
+        <link rel="stylesheet" media="screen" type="text/css" href="_site/css/codemirror/theme/monokai.css">
+        <link rel="stylesheet" media="screen" type="text/css" href="_site/css/codemirror/theme/neat.css">
+        <link rel="stylesheet" media="screen" type="text/css" href="_site/css/codemirror/theme/neo.css">
+        <link rel="stylesheet" media="screen" type="text/css" href="_site/css/codemirror/theme/night.css">
+        <link rel="stylesheet" media="screen" type="text/css" href="_site/css/app.css" />
+        <script src="_site/js/vendor/codemirror/codemirror.js"></script>
+        <script src="_site/js/vendor/codemirror/modes/javascript.js"></script>
+        <script src="_site/js/vendor/jquery-2.1.3.min.js"></script>
+        <script src="_site/js/vendor/eligrey/Blob.js"></script>
+        <script src="_site/js/vendor/eligrey/FileSaver.js"></script>
+        <script src="_site/js/vendor/jquery-2.1.3.min.js"></script>
+        <script src="_site/js/Editor.js"></script>
+        <script src="_site/js/pixi.js"></script>
+        <script src="_site/js/pom.min.js"></script>
+        <script src="_site/js/app.js"></script>
+        <script src="_site/js/viewer.js"></script>
     </head>
     <body>
-        <a href="_site/basic_player/index.html">Simple Example: show a sprite with rotation</a>
+
+        <div class="containerTop">
+
+            <nav class="show">
+                <span id='hamburger'>
+                    <img src="_site/img/burger_button.png">
+                </span>
+                <img src="_site/img/pixi_nav_title.png">
+                <ul id="navList"></ul>
+            </nav>
+
+            <section class="liveView centred">
+
+                <h1></h1>
+
+                <div id="example">
+                    <iframe id="preview" frameborder="0" src=""></iframe>
+                </div>
+            </section>
+
+        </div>
+
+            <section class="containerBottom centred">
+                <p class="themeSelect">
+                    Change editor theme :
+                    <select id="theme">
+                        <option selected="">default</option>
+                        <option>ambiance</option>
+                        <option>monokai</option>
+                        <option>neat</option>
+                        <option>neo</option>
+                        <option>night</option>
+                    </select>
+                </p>
+                <div class="codeRefresh">
+
+                    <button id="refresh">
+                        <div class="shadow"></div>
+                        <div class="btn"></div>
+                    </button>
+                </div>
+                <textarea id="sourcecode"></textarea>
+
+                <section class="downloadSection marginTop">
+                    <!--gown.js version :
+                    <select id="version">
+                        <option value="https://cdn.rawgit.com/brean/gown.js/master/bin/pixi.js" data-version="dev">
+                            Latest dev
+                        </option>
+                    </select>
+                    -->
+                    <span><a id='download' href="#">Download the example code</a></span>
+
+                    <p class="marginTop">
+                        Would you like to create a new example ? Head over to the examples repo on
+                        <a href="https://github.com/GreyRook/POM-examples">GitHub</a>
+                    </p>
+
+                </section>
+
+
+
+
+                <footer>
+                    <section class="centred">
+                        <p>
+                            <span class="copyright">
+                                Copyright © 2016 <a href="http://github.com/brean">Grey Rook</a>
+                                All Rights Reserved.
+                            </span>
+                            <span class="icons">
+                                <a href="http://www.html5gamedevs.com/forum/15-pixijs/" target="_blank">
+                                    <img src="_site/img/footer_forums.png" alt="forum-link">PIXI-JS Forum
+                                </a>
+
+                                <a href="https://github.com/GreyRook/POM" target="_blank">
+                                    <img src="_site/img/footer_github.png" alt="github-icon">Github
+                                </a>
+                            </span>
+                        </p>
+                    </section>
+                </footer>
+
+            </section><!-- end .containerBottom -->
+
+
+        <!-- WebGL Stats script -->
+        <script src="//cdn.webglstats.com/stat.js" defer="defer" async="async"></script>
+
+        <script id="lib-script"></script>
+        <script id="example-script"></script>
     </body>
 </html>

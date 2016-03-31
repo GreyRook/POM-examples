@@ -12,7 +12,7 @@
   "children": [
     {
       "values": {
-        "source": "../assets/bunny.png", 
+        "source": "assets/bunny.png", 
         "rotation": 1.5707963267948966, 
         "scale": {
           "x": 2

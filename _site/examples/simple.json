@@ -1,0 +1,28 @@
+{
+  "values": {
+    "position": {
+      "y": 100, 
+      "x": 100
+    }, 
+    "scale": {
+      "y": 2.0, 
+      "x": 2.0
+    }
+  }, 
+  "children": [
+    {
+      "values": {
+        "source": "../assets/bunny.png", 
+        "rotation": 1.5707963267948966, 
+        "scale": {
+          "x": 2
+        }, 
+        "pivot": {
+          "x": 20
+        }
+      }, 
+      "type": "sprite"
+    }
+  ]
+}
+

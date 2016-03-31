@@ -15,47 +15,40 @@
     </head>
 <body>
 <script>
+    function loadXMLDoc() {
+        var xmlhttp = new XMLHttpRequest();
+        
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == XMLHttpRequest.DONE && 
+                xmlhttp.status == 200){
+                   manageData( xmlhttp.responseText );
+            }
+        }
+
+        xmlhttp.open("GET", "../examples/simple.json", true);
+        xmlhttp.send();
+    }
+
+    function manageData(data) {
+        var manager = new POM.Manager(data);
+
+        stage.addChild(manager);
+
+        animate();
+    }
+
     var stage = new PIXI.Container();
 
     var renderer = PIXI.autoDetectRenderer(800, 600,{backgroundColor : 0xffffff});
     document.body.appendChild(renderer.view);
-
-    var manager = new POM.Manager({
-        // the root object is a always of type "container"
-        'values': {
-            'position': {
-                'x': 100,
-                'y': 100
-            },
-            'scale': {
-                'x': 2.0,
-                'y': 2.0
-            }
-        },
-        'children': [
-            {
-                'type': 'sprite',
-                'values': {
-                    'source': '../assets/bunny.png',
-                    //scale the image up 4 times 2 times added to the 2-scale of the parent container
-                    'scale': {'x': 2},
-                    'pivot': {'x': 20},
-                    // rotate 90°
-                    'rotation': Math.PI/2
-                }
-            }
-        ]
-    });
-
-    stage.addChild(manager);
-
-    animate();
 
     function animate() {
         // render the stage
         renderer.render(stage);
         requestAnimationFrame(animate);
     }
+    
+    loadXMLDoc();
 </script>
 </body>
 </html>

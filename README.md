@@ -18,8 +18,8 @@ stage.addChild(manager);
 
 animate();
 function animate() {
-renderer.render(stage);
-requestAnimationFrame(animate);
+    renderer.render(stage);
+    requestAnimationFrame(animate);
 }
 ```
 
@@ -59,7 +59,7 @@ stage.addChild(manager);
 
 animate();
 function animate() {
-renderer.render(stage);
-requestAnimationFrame(animate);
+    renderer.render(stage);
+    requestAnimationFrame(animate);
 }
 ```

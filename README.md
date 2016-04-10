@@ -44,7 +44,7 @@ p.updateData = function(data){
 
     //Your Custom Code
     
-    POM.ContainerElement.prototype.updateData(data)
+    POM.ContainerElement.prototype.updateData.call(this, data)
 }
 
 var stage = new PIXI.Container();
